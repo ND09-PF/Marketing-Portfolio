@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About — Naisargi Doshi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Space+Mono&display=swap" rel="stylesheet"/>
+<style>
+/* ── TOKENS ── */
+:root{
+  --bg:#ffffff;--bg2:#fafafa;--tint:#f5f3ff;--tint2:#ede9fe;
+  --primary:#5b21b6;--primary2:#7c3aed;--primary3:#a78bfa;
+  --deep:#1e1b4b;--accent:#06b6d4;--accent2:#0891b2;
+  --text:#0f0e17;--text2:#3d3a52;--muted:#6e6a8a;
+  --border:#e8e4f0;--border2:#d1c9e8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 72px;height:68px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-bottom:1px solid transparent;transition:all .3s}
+nav.scrolled{border-bottom-color:var(--border);box-shadow:0 1px 24px rgba(91,33,182,.06)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--deep);text-decoration:none;letter-spacing:.01em;display:flex;align-items:center;gap:10px}
+.nav-logo-icon{width:32px;height:32px;border-radius:8px;background:var(--primary);display:flex;align-items:center;justify-content:center}
+.nav-logo-icon svg{width:16px;height:16px;fill:white}
+.nav-links{display:flex;gap:0;list-style:none}
+.nav-links a{font-size:13px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:0 20px;height:68px;display:flex;align-items:center;position:relative;transition:color .3s}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:20px;right:20px;height:2px;background:var(--primary);transform:scaleX(0);transition:transform .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--primary)}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+.nav-cta{padding:9px 24px;border-radius:50px;background:var(--primary);color:white;font-size:13px;font-weight:500;letter-spacing:.05em;text-decoration:none;transition:all .25s;box-shadow:0 2px 12px rgba(91,33,182,.3)}
+.nav-cta:hover{background:var(--deep);box-shadow:0 4px 20px rgba(91,33,182,.45);transform:translateY(-1px)}
+
+/* ── BODY CURSOR ── */
+body{cursor:auto}
+
+/* ── SHARED ── */
+.sec{padding:88px 72px}
+.sec-alt{background:var(--bg2)}
+.sec-tint{background:var(--tint)}
+.inner{max-width:1100px;margin:0 auto}
+.inner-narrow{max-width:720px;margin:0 auto}
+.stag{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);margin-bottom:12px}
+.stag::before{content:'';width:18px;height:1.5px;background:var(--primary)}
+.sh{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,50px);font-weight:300;line-height:1.08;margin-bottom:24px}
+.sh em{font-style:italic;color:var(--primary)}
+.body-text{font-size:16px;line-height:1.85;color:var(--text2)}
+.body-text+.body-text{margin-top:20px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .65s,transform .65s}
+.rv.on{opacity:1;transform:none}
+.rv2{opacity:0;transform:translateY(24px);transition:opacity .65s .12s,transform .65s .12s}
+.rv2.on{opacity:1;transform:none}
+.rv3{opacity:0;transform:translateY(24px);transition:opacity .65s .24s,transform .65s .24s}
+.rv3.on{opacity:1;transform:none}
+
+/* ── PAGE HERO ── */
+.page-hero{padding:136px 72px 80px;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+.page-hero-bg{position:absolute;inset:0;z-index:0}
+.page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:64px 64px;opacity:.3}
+.pho1{position:absolute;width:400px;height:400px;border-radius:50%;filter:blur(80px);opacity:.1;background:var(--primary2);top:-100px;right:-60px}
+.pho2{position:absolute;width:240px;height:240px;border-radius:50%;filter:blur:80px;opacity:.08;background:var(--accent);bottom:0;right:200px}
+.page-hero-inner{position:relative;z-index:1;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.page-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--tint);border:1px solid var(--tint2);border-radius:50px;padding:5px 14px 5px 10px;margin-bottom:24px}
+.page-eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.page-eyebrow-txt{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--primary)}
+.page-hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,6vw,84px);font-weight:300;line-height:.92;letter-spacing:-.02em;margin-bottom:20px}
+.page-hero-title span{display:block;font-style:italic;color:var(--primary)}
+.page-hero-sub{font-size:15px;color:var(--muted);line-height:1.7;max-width:400px}
+
+/* ── MARKETING LENS VISUAL ── */
+.lens-wrap{position:relative;width:100%;height:300px;display:flex;align-items:center;justify-content:center}
+.lens-scene{position:relative;width:300px;height:300px}
+/* Each circle floats independently */
+.lens-circle{position:absolute;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px}
+.lc1{width:160px;height:160px;top:0;left:0;background:radial-gradient(135deg at 30% 30%,rgba(91,33,182,.18),rgba(91,33,182,.06));border:1px solid rgba(91,33,182,.15);animation:lcFloat1 6s ease-in-out infinite;backdrop-filter:blur(2px)}
+.lc2{width:150px;height:150px;top:0;right:0;background:radial-gradient(135deg at 70% 30%,rgba(6,182,212,.16),rgba(6,182,212,.05));border:1px solid rgba(6,182,212,.15);animation:lcFloat2 7s ease-in-out infinite 1s;backdrop-filter:blur(2px)}
+.lc3{width:155px;height:155px;bottom:0;left:20px;background:radial-gradient(135deg at 30% 70%,rgba(167,139,250,.18),rgba(167,139,250,.06));border:1px solid rgba(167,139,250,.2);animation:lcFloat3 8s ease-in-out infinite 0.5s;backdrop-filter:blur(2px)}
+.lc4{width:145px;height:145px;bottom:0;right:20px;background:radial-gradient(135deg at 70% 70%,rgba(8,145,178,.15),rgba(8,145,178,.05));border:1px solid rgba(8,145,178,.12);animation:lcFloat4 6.5s ease-in-out infinite 1.5s;backdrop-filter:blur(2px)}
+/* Subtle inner glow on each */
+.lc1::before,.lc2::before,.lc3::before,.lc4::before{content:'';position:absolute;inset:12px;border-radius:50%;opacity:.4}
+.lc1::before{background:radial-gradient(circle,rgba(91,33,182,.12),transparent)}
+.lc2::before{background:radial-gradient(circle,rgba(6,182,212,.12),transparent)}
+.lc3::before{background:radial-gradient(circle,rgba(167,139,250,.12),transparent)}
+.lc4::before{background:radial-gradient(circle,rgba(8,145,178,.12),transparent)}
+.lc-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;position:relative;z-index:1;text-align:center;line-height:1.4}
+.lc1 .lc-label{color:var(--primary)}
+.lc2 .lc-label{color:var(--accent2)}
+.lc3 .lc-label{color:var(--primary2)}
+.lc4 .lc-label{color:var(--accent)}
+/* Center overlap glow */
+.lens-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;background:radial-gradient(circle,rgba(91,33,182,.12),transparent);filter:blur(8px);animation:centerPulse 4s ease-in-out infinite}
+@keyframes centerPulse{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.2)}}
+@keyframes lcFloat1{0%,100%{transform:translate(0,0)}50%{transform:translate(4px,-8px)}}
+@keyframes lcFloat2{0%,100%{transform:translate(0,0)}50%{transform:translate(-5px,-6px)}}
+@keyframes lcFloat3{0%,100%{transform:translate(0,0)}50%{transform:translate(5px,7px)}}
+@keyframes lcFloat4{0%,100%{transform:translate(0,0)}50%{transform:translate(-4px,6px)}}
+
+/* ── SECTION: ABOUT ME ── */
+.about-rule{width:0;height:1.5px;background:linear-gradient(90deg,var(--primary),var(--accent));margin:32px 0 0;animation:ruleIn .8s .3s forwards;opacity:0}
+@keyframes ruleIn{to{width:56px;opacity:1}}
+
+/* ── SECTION: HOW I GOT HERE ── */
+.got-here-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:center;max-width:1100px;margin:0 auto}
+.pull-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(19px,2.2vw,25px);font-style:italic;font-weight:300;line-height:1.6;color:var(--primary3);position:relative;padding:0 0 0 24px}
+.pull-quote::before{content:'';position:absolute;left:0;top:4px;bottom:4px;width:2px;background:linear-gradient(to bottom,var(--primary),var(--accent))}
+
+/* ── SECTION: EDUCATION ── */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1100px;margin:0 auto}
+.edu-card{background:white;border:1px solid var(--border);border-radius:16px;padding:32px;position:relative;overflow:hidden;transition:all .3s}
+.edu-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--primary),var(--accent))}
+.edu-card:hover{box-shadow:0 8px 32px rgba(91,33,182,.1);transform:translateY(-3px)}
+.edu-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.edu-degree{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--deep);margin-bottom:6px;line-height:1.25}
+.edu-institution{font-size:14px;color:var(--text2);margin-bottom:4px}
+.edu-country{font-size:12px;color:var(--muted);letter-spacing:.04em}
+
+/* ── SECTION: HOW I WORK ── */
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden;max-width:1100px;margin:0 auto}
+.work-card{background:white;padding:36px 30px;position:relative;overflow:hidden;transition:background .25s}
+.work-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--primary),var(--accent));transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.work-card:hover{background:var(--tint)}
+.work-card:hover::before{transform:scaleX(1)}
+.work-card-num{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--primary3);margin-bottom:16px}
+.work-card-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;font-style:italic;color:var(--deep);margin-bottom:14px;line-height:1.25}
+.work-card-body{font-size:14px;color:var(--muted);line-height:1.72}
+
+/* ── SECTION: STICKY NOTES ── */
+.pinboard{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1100px;margin:0 auto;padding:8px 4px 24px}
+.sticky{position:relative;border-radius:3px;padding:28px 24px 24px;transition:transform .3s,box-shadow .3s;cursor:default}
+/* Pin */
+.sticky::before{content:'';position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;border:1.5px solid rgba(0,0,0,.12);z-index:2}
+/* Fold corner */
+.sticky::after{content:'';position:absolute;bottom:0;right:0;width:24px;height:24px;background:rgba(0,0,0,.06)}
+.sticky:hover{transform:translateY(-6px) rotate(0deg);box-shadow:0 20px 48px rgba(0,0,0,.12)}
+.sticky-1{background:#fef3c7;box-shadow:0 4px 16px rgba(0,0,0,.08);transform:rotate(-1.5deg)}
+.sticky-1::before{background:#f59e0b}
+.sticky-2{background:#e0f2fe;box-shadow:0 4px 16px rgba(0,0,0,.08);transform:rotate(1deg)}
+.sticky-2::before{background:#0891b2}
+.sticky-3{background:#fce7f3;box-shadow:0 4px 16px rgba(0,0,0,.08);transform:rotate(-0.8deg)}
+.sticky-3::before{background:#db2777}
+.sticky-cat{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px;font-weight:400}
+.sticky-1 .sticky-cat{color:#92400e}
+.sticky-2 .sticky-cat{color:#0c4a6e}
+.sticky-3 .sticky-cat{color:#831843}
+.sticky-skills{display:flex;flex-direction:column;gap:9px;list-style:none}
+.sticky-skill{font-size:13.5px;color:rgba(0,0,0,.65);line-height:1.4;display:flex;align-items:center;gap:8px}
+.sticky-skill::before{content:'';width:3px;height:3px;border-radius:50%;background:currentColor;opacity:.5;flex-shrink:0}
+
+/* ── SECTION: TOOLS ── */
+.tools-wrap{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:36px}
+.tool-group-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.tool-chips{display:flex;flex-wrap:wrap;gap:10px}
+/* Logo chip */
+.tool-chip{display:flex;align-items:center;gap:8px;padding:8px 16px;border:1px solid var(--border);border-radius:50px;background:white;transition:all .25s;cursor:default;text-decoration:none}
+.tool-chip:hover{border-color:var(--primary2);background:var(--tint);box-shadow:0 4px 16px rgba(91,33,182,.1);transform:translateY(-1px)}
+.tool-chip img{width:16px;height:16px;object-fit:contain;flex-shrink:0;filter:grayscale(.3);transition:filter .25s}
+.tool-chip:hover img{filter:grayscale(0)}
+.tool-chip-name{font-size:12px;color:var(--text2);letter-spacing:.02em;transition:color .25s;white-space:nowrap}
+.tool-chip:hover .tool-chip-name{color:var(--primary)}
+/* SVG fallback icon inside chip */
+.tool-chip-icon{width:16px;height:16px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+
+/* ── AI CHAT ── */
+.ai-fab{position:fixed;bottom:28px;right:28px;z-index:600;width:52px;height:52px;border-radius:16px;background:var(--primary);border:none;cursor:none;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(91,33,182,.4);transition:all .3s;opacity:0}
+.ai-fab.visible{opacity:1;animation:none}
+.ai-fab:hover{background:var(--deep);transform:translateY(-2px);box-shadow:0 8px 28px rgba(91,33,182,.55)}
+.ai-fab svg{width:22px;height:22px;fill:white}
+.ai-label{position:absolute;right:60px;top:50%;transform:translateY(-50%);background:var(--deep);color:white;font-size:11px;padding:6px 12px;border-radius:8px;white-space:nowrap;letter-spacing:.04em;opacity:0;pointer-events:none;transition:opacity .25s}
+.ai-label::after{content:'';position:absolute;left:100%;top:50%;transform:translateY(-50%);border:5px solid transparent;border-left-color:var(--deep)}
+.ai-fab:hover .ai-label{opacity:1}
+.cpanel{position:fixed;bottom:92px;right:28px;z-index:600;width:360px;max-height:480px;background:white;border:1px solid var(--border);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 16px 48px rgba(91,33,182,.15);transform:scale(.92) translateY(12px);opacity:0;pointer-events:none;transition:all .3s cubic-bezier(.34,1.56,.64,1);transform-origin:bottom right}
+.cpanel.open{transform:scale(1) translateY(0);opacity:1;pointer-events:all}
+.chat-head{padding:14px 16px;background:var(--tint);border-bottom:1px solid var(--tint2);display:flex;align-items:center;gap:10px}
+.chat-av{width:32px;height:32px;border-radius:8px;background:var(--primary);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.chat-name{font-size:13px;font-weight:500;color:var(--deep)}
+.chat-status{font-size:11px;color:var(--accent);display:flex;align-items:center;gap:4px}
+.chat-status::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent)}
+.chat-msgs{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:9px;scrollbar-width:thin;scrollbar-color:var(--border) transparent;max-height:300px}
+.cm{max-width:88%;padding:9px 13px;border-radius:13px;font-size:13px;line-height:1.55;animation:msgIn .25s ease}
+@keyframes msgIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.cm.bot{background:var(--tint);border:1px solid var(--tint2);color:var(--text);align-self:flex-start;border-bottom-left-radius:3px}
+.cm.user{background:var(--primary);color:white;align-self:flex-end;border-bottom-right-radius:3px}
+.ctyp{display:flex;gap:3px;padding:10px 13px;align-self:flex-start}
+.ctyp span{width:5px;height:5px;border-radius:50%;background:var(--primary3);animation:td 1.2s infinite}
+.ctyp span:nth-child(2){animation-delay:.2s}
+.ctyp span:nth-child(3){animation-delay:.4s}
+@keyframes td{0%,60%,100%{transform:translateY(0);opacity:.35}30%{transform:translateY(-5px);opacity:1}}
+.csugg-wrap{padding:0 12px 9px;display:flex;gap:6px;flex-wrap:wrap}
+.csug{padding:5px 11px;border-radius:50px;border:1px solid var(--tint2);background:transparent;font-size:11px;color:var(--primary);cursor:none;transition:all .2s;font-family:'DM Sans',sans-serif}
+.csug:hover{background:var(--tint);border-color:var(--primary)}
+.cinw{padding:10px 12px;border-top:1px solid var(--border);display:flex;gap:8px;align-items:center}
+.cin{flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:50px;padding:8px 14px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;transition:border-color .25s}
+.cin:focus{border-color:var(--primary2)}
+.csnd{width:30px;height:30px;border-radius:50%;background:var(--primary);border:none;cursor:none;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .2s}
+.csnd:hover{transform:scale(1.1)}
+.csnd svg{width:12px;height:12px;fill:white}
+
+/* ── FOOTER ── */
+footer{padding:32px 72px;background:var(--deep);display:flex;justify-content:space-between;align-items:center}
+.fl{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:white}
+.fc{font-size:12px;color:rgba(255,255,255,.4)}
+.flinks{display:flex;gap:24px}
+.flinks a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none;transition:color .25s}
+.flinks a:hover{color:white}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  nav{padding:0 24px}.nav-links,.nav-cta{display:none}
+  .page-hero,.sec{padding:100px 24px 64px}
+  .page-hero-inner,.got-here-grid,.edu-grid{grid-template-columns:1fr;gap:36px}
+  .lens-wrap{height:220px;margin-top:32px}
+  .lens-scene{width:220px;height:220px}
+  .lc1,.lc2,.lc3,.lc4{width:110px;height:110px}
+  .work-grid,.pinboard{grid-template-columns:1fr}
+  .sticky{transform:rotate(0)}
+  footer{flex-direction:column;gap:12px;text-align:center;padding:24px}
+  .cpanel{width:calc(100vw - 48px);right:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 16 16"><text x="2" y="13" font-size="11" font-family="serif" font-style="italic">N</text></svg>
+    </div>
+    Naisargi Doshi
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About Me</a></li>
+    <li><a href="work.html">My Work</a></li>
+    <li><a href="casestudies.html">Case Studies</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Let's Talk</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg">
+    <div class="page-hero-grid"></div>
+    <div class="pho1"></div>
+    <div class="pho2"></div>
+  </div>
+  <div class="page-hero-inner">
+    <div class="page-hero-left">
+      <div class="page-eyebrow">
+        <div class="page-eyebrow-dot"></div>
+        <span class="page-eyebrow-txt">Getting to know me</span>
+      </div>
+      <h1 class="page-hero-title">
+        About
+        <span>Naisargi</span>
+      </h1>
+      <p class="page-hero-sub">7+ years across pharma, automotive, entertainment, semiconductor, and digital. Both in-house and agency. Always curious about what actually makes marketing work.</p>
+    </div>
+
+    <!-- MARKETING LENS VISUAL: 4 overlapping soft circles -->
+    <div class="lens-wrap" aria-hidden="true">
+      <div class="lens-scene">
+        <div class="lc1 lens-circle"><span class="lc-label">Customer</span></div>
+        <div class="lc2 lens-circle"><span class="lc-label">Brand</span></div>
+        <div class="lc3 lens-circle"><span class="lc-label">Performance</span></div>
+        <div class="lc4 lens-circle"><span class="lc-label">Growth</span></div>
+        <div class="lens-center"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ① ABOUT ME ✨ -->
+<section class="sec">
+  <div class="inner-narrow">
+    <div class="stag rv">About Me ✨</div>
+    <p class="body-text rv">I've worked across pharma, automotive, entertainment, semiconductor, and digital, both in companies and agencies, so I've had to adapt to very different kinds of businesses and audiences.</p>
+    <p class="body-text rv2">Each role has been different, but what's stayed consistent is the need to understand the context, what the business is trying to achieve, who the customer is, and where marketing can actually make an impact.</p>
+    <p class="body-text rv3">I'm interested in how marketing decisions are made, and how data, intuition, and experimentation factor into those decisions.</p>
+    <div class="about-rule rv3"></div>
+  </div>
+</section>
+
+<!-- ② HOW I GOT HERE 🛍️ -->
+<section class="sec sec-alt">
+  <div class="got-here-grid">
+    <div>
+      <div class="stag rv">How I Got Here 🛍️</div>
+      <h2 class="sh rv">The story behind<br>the <em>curiosity</em></h2>
+      <p class="body-text rv">Growing up, I used to go shopping with my mom, and I'd often notice how similar products competed with each other. I was curious about what made someone choose one brand over another, and what actually influenced that decision.</p>
+      <p class="body-text rv2" style="margin-top:20px">As a consumer, I started noticing how marketing shaped my own choices too, from ads to packaging to the way brands positioned themselves. That's where my interest in marketing really began.</p>
+      <p class="body-text rv3" style="margin-top:20px">Over time, that curiosity turned into a career. I started paying closer attention to how brands communicate and how campaigns influence behavior, and eventually moved into roles where I could work on these problems directly.</p>
+    </div>
+    <div class="rv2" style="display:flex;align-items:center;justify-content:center;padding:20px 0">
+      <blockquote class="pull-quote">
+        "I started noticing how marketing shaped my own choices too — from ads to packaging to the way brands positioned themselves."
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ③ EDUCATION 🎓 -->
+<section class="sec">
+  <div class="inner">
+    <div class="stag rv">Education 🎓</div>
+    <h2 class="sh rv">Where I <em>studied</em></h2>
+    <div class="edu-grid">
+      <div class="edu-card rv2">
+        <div class="edu-label">Postgraduate</div>
+        <div class="edu-degree">MS in Marketing Analytics</div>
+        <div class="edu-institution">California State University, East Bay</div>
+        <div class="edu-country">USA</div>
+      </div>
+      <div class="edu-card rv3">
+        <div class="edu-label">Graduate</div>
+        <div class="edu-degree">MBA in Marketing</div>
+        <div class="edu-institution">N.L. Dalmia Institute of Management Studies & Research</div>
+        <div class="edu-country">India</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ HOW I WORK 🧠 -->
+<section class="sec sec-tint">
+  <div class="inner">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="stag rv" style="justify-content:center">How I Work 🧠</div>
+      <h2 class="sh rv" style="text-align:center">The way I <em>approach things</em></h2>
+    </div>
+    <div class="work-grid">
+      <div class="work-card rv">
+        <div class="work-card-num">01</div>
+        <div class="work-card-title">Start with context</div>
+        <div class="work-card-body">I begin by understanding what the business needs, who the customer is, and how competitors are positioned. This helps identify where marketing can actually make an impact.</div>
+      </div>
+      <div class="work-card rv2">
+        <div class="work-card-num">02</div>
+        <div class="work-card-title">Test, learn, and iterate</div>
+        <div class="work-card-body">I rely on data and past performance to guide decisions. I look at what has worked, what hasn't, and use testing to improve results instead of making assumptions.</div>
+      </div>
+      <div class="work-card rv3">
+        <div class="work-card-num">03</div>
+        <div class="work-card-title">Focus on what drives outcomes</div>
+        <div class="work-card-body">I prioritise what actually moves performance, not just activity. I enjoy working on problems where there isn't a clear answer upfront and figuring things out over time.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ WHAT I'M GOOD AT 📌 -->
+<section class="sec">
+  <div class="inner">
+    <div style="text-align:center;margin-bottom:52px">
+      <div class="stag rv" style="justify-content:center">What I'm Good At 📌</div>
+      <h2 class="sh rv" style="text-align:center">Core <em>strengths</em></h2>
+    </div>
+    <div class="pinboard">
+      <!-- Sticky 1: Growth & Performance -->
+      <div class="sticky sticky-1 rv">
+        <div class="sticky-cat">Growth & Performance</div>
+        <ul class="sticky-skills">
+          <li class="sticky-skill">Growth Marketing</li>
+          <li class="sticky-skill">Campaign Analytics</li>
+          <li class="sticky-skill">A/B Testing</li>
+          <li class="sticky-skill">Marketing Analytics</li>
+        </ul>
+      </div>
+      <!-- Sticky 2: Product & Strategy -->
+      <div class="sticky sticky-2 rv2">
+        <div class="sticky-cat">Product & Strategy</div>
+        <ul class="sticky-skills">
+          <li class="sticky-skill">Product Marketing</li>
+          <li class="sticky-skill">GTM Strategy</li>
+          <li class="sticky-skill">Marketing Mix Modelling</li>
+        </ul>
+      </div>
+      <!-- Sticky 3: Brand & Research -->
+      <div class="sticky sticky-3 rv3">
+        <div class="sticky-cat">Brand & Research</div>
+        <ul class="sticky-skills">
+          <li class="sticky-skill">Branding</li>
+          <li class="sticky-skill">Market Research & Insights</li>
+          <li class="sticky-skill">Content Creation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ TOOLS & PLATFORMS 🧰 -->
+<section class="sec sec-alt">
+  <div class="inner">
+    <div class="stag rv">Tools & Platforms 🧰</div>
+    <h2 class="sh rv">What I <em>work with</em></h2>
+    <div class="tools-wrap rv2">
+
+      <div class="tool-group">
+        <div class="tool-group-label">Analytics</div>
+        <div class="tool-chips">
+          <div class="tool-chip">
+            <img src="https://cdn.simpleicons.org/googleanalytics/E37400" alt="Google Analytics" onerror="this.style.display='none'"/>
+            <span class="tool-chip-name">Google Analytics</span>
+          </div>
+          <div class="tool-chip">
+            <img src="https://cdn.simpleicons.org/googleads/4285F4" alt="Google Ads" onerror="this.style.display='none'"/>
+            <span class="tool-chip-name">Google Ads</span>
+          </div>
+          <div class="tool-chip">
+            <img src="https://cdn.simpleicons.org/tableau/E97627" alt="Tableau" onerror="this.style.display='none'"/>
+            <span class="tool-chip-name">Tableau</span>
+          </div>
+          <div class="tool-chip">
+            <img src="https://cdn.simpleicons.org/mysql/4479A1" alt="SQL" onerror="this.style.display='none'"/>
+            <span class="tool-chip-name">SQL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-group">
+        <div class="tool-group-label">Paid Media</div>
+        <div class="tool-chips">
+          <div class="tool-chip">
+            <img src="https://cdn.simpleicons.org/meta/0081FB" alt="Meta" onerror="this.style.display='none'"/>
+            <span class="tool-chip-name">Meta (Facebook / Instagram)</span>
+          </div>
+          <div class="tool-chip">
+            <img src="https://cdn.simpleicons.org/linkedin/0A66C2" alt="LinkedIn" onerror="this.style.display='none'"/>
+            <span class="tool-chip-name">LinkedIn</span>
+          </div>
+          <div class="tool-chip">
+            <img src="https://cdn.simpleicons.org/tiktok/000000" alt="TikTok" onerror="this.style.display='none'"/>
+            <span class="tool-chip-name">TikTok</span>
+          </div>
+          <div class="tool-chip">
+            <img src="https://cdn.simpleicons.org/youtube/FF0000" alt="YouTube" onerror="this.style.display='none'"/>
+            <span class="tool-chip-name">YouTube</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-group">
+        <div class="tool-group-label">CRM & Automation</div>
+        <div class="tool-chips">
+          <div class="tool-chip">
+            <img src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="HubSpot" onerror="this.style.display='none'"/>
+            <span class="tool-chip-name">HubSpot</span>
+          </div>
+          <div class="tool-chip">
+            <img src="https://cdn.simpleicons.org/mailchimp/FFE01B" alt="Mailchimp" onerror="this.style.display='none'"/>
+            <span class="tool-chip-name">Mailchimp</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-group">
+        <div class="tool-group-label">Creative / Other</div>
+        <div class="tool-chips">
+          <div class="tool-chip">
+            <img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma" onerror="this.style.display='none'"/>
+            <span class="tool-chip-name">Figma</span>
+          </div>
+          <div class="tool-chip">
+            <img src="https://cdn.simpleicons.org/canva/00C4CC" alt="Canva" onerror="this.style.display='none'"/>
+            <span class="tool-chip-name">Canva</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fl">Naisargi Doshi</div>
+  <div class="fc">© 2025 · All rights reserved</div>
+  <div class="flinks">
+    <a href="about.html">About</a>
+    <a href="work.html">Work</a>
+    <a href="casestudies.html">Case Studies</a>
+    <a href="https://www.linkedin.com/in/naisargidoshi" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+
+<!-- AI CHAT — appears after 3s delay -->
+<button class="ai-fab" id="aiFab" style="position:fixed">
+  <div class="ai-label">Ask me anything</div>
+  <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+</button>
+<div class="cpanel" id="cpanel">
+  <div class="chat-head">
+    <div class="chat-av">🤖</div>
+    <div>
+      <div class="chat-name">Naisargi's AI Assistant</div>
+      <div class="chat-status">Online — Ask me anything</div>
+    </div>
+    <button onclick="toggleChat()" style="background:none;border:none;color:var(--muted);cursor:none;font-size:16px;padding:0 4px;margin-left:auto">✕</button>
+  </div>
+  <div class="chat-msgs" id="cmsgs">
+    <div class="cm bot">👋 Hi! I know everything about Naisargi's career, skills, and experience. What would you like to know?</div>
+  </div>
+  <div class="csugg-wrap" id="csugg">
+    <button class="csug" onclick="ss(this)">What has she worked on?</button>
+    <button class="csug" onclick="ss(this)">What are her key skills?</button>
+    <button class="csug" onclick="ss(this)">Is she open to new roles?</button>
+    <button class="csug" onclick="ss(this)">How do I get in touch?</button>
+  </div>
+  <div class="cinw">
+    <input class="cin" id="cin" placeholder="Ask about Naisargi..." onkeydown="if(event.key==='Enter')send()"/>
+    <button class="csnd" onclick="send()"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg></button>
+  </div>
+</div>
+
+<script>
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40));
+
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{
+  if(e.isIntersecting) e.target.classList.add('on');
+}),{threshold:.1});
+document.querySelectorAll('.rv,.rv2,.rv3').forEach(el=>obs.observe(el));
+
+// AI CHAT — delayed 3s
+setTimeout(()=>{
+  const fab=document.getElementById('aiFab');
+  fab.classList.add('visible');
+  fab.style.transition='opacity .5s, transform .3s, background .25s, box-shadow .25s';
+},3000);
+let chatOpen=false;
+function toggleChat(){chatOpen=!chatOpen;document.getElementById('cpanel').classList.toggle('open',chatOpen)}
+document.getElementById('aiFab').addEventListener('click',toggleChat);
+function ss(btn){document.getElementById('csugg').style.display='none';addMsg(btn.textContent,'user');setTimeout(()=>getReply(btn.textContent),400)}
+function send(){const inp=document.getElementById('cin');const txt=inp.value.trim();if(!txt)return;inp.value='';document.getElementById('csugg').style.display='none';addMsg(txt,'user');setTimeout(()=>getReply(txt),400)}
+function addMsg(t,type){const m=document.getElementById('cmsgs');const d=document.createElement('div');d.className='cm '+type;d.textContent=t;m.appendChild(d);m.scrollTop=m.scrollHeight}
+function addTyp(){const m=document.getElementById('cmsgs');const d=document.createElement('div');d.className='ctyp';d.id='ctyp';d.innerHTML='<span></span><span></span><span></span>';m.appendChild(d);m.scrollTop=m.scrollHeight}
+async function getReply(msg){
+  addTyp();
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+      model:'claude-sonnet-4-20250514',max_tokens:1000,
+      system:`You are the AI assistant on Naisargi Doshi's portfolio website. You're helpful, warm, and conversational — like a knowledgeable colleague who knows Naisargi well. Keep answers short (2-3 sentences), specific, and natural. Don't sound like a press release. If someone asks something you don't know, say so honestly and suggest they reach out directly.
+
+About Naisargi:
+- Growth & Product Marketing professional based in San Francisco, CA
+- 7+ years across B2B and B2C — pharma, automotive, entertainment, semiconductor, digital
+- Both in-house and agency experience
+- Companies: Pfizer, Mercedes-Benz, Saregama India, Logicloop Digital, Six Sigma Microelectronics
+- Education: MS in Marketing Analytics, Cal State East Bay (GPA 4.0) + MBA in Marketing, N.L. Dalmia Institute, India
+- Key results: 1,200–1,500 qualified leads/month at Mercedes with 65% qualification rate; 111% increase in impressions; 10M monthly reach
+- Skills: Growth marketing, product marketing, GTM strategy, analytics, AI tools, marketing automation
+- Tools: Google Analytics, Google Ads, Tableau, SQL, Meta, LinkedIn, TikTok, YouTube, HubSpot, Mailchimp, Figma, Canva
+- Open to: full-time roles, consulting, collaborations
+- Contact: doshinaisargi09@gmail.com | linkedin.com/in/naisargidoshi`,
+      messages:[{role:'user',content:msg}]
+    })});
+    const data=await r.json();
+    document.getElementById('ctyp')?.remove();
+    addMsg(data.content?.[0]?.text||"Not sure about that one — best to reach out to Naisargi directly at doshinaisargi09@gmail.com!","bot");
+  }catch{
+    document.getElementById('ctyp')?.remove();
+    addMsg("Something went wrong on my end! You can reach Naisargi directly at doshinaisargi09@gmail.com or on LinkedIn.","bot");
+  }
+}
+</script>
+</body>
+</html>
