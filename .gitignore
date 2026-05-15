@@ -1,0 +1,5 @@
+.chrome-dump-test/
+.edge-thumb-profile/
+_chrome_stderr.txt
+_chrome_stdout.txt
+_thumbnail_capture.html

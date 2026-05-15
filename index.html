@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Naisargi Doshi — Growth & Product Marketing Strategist</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Space+Mono&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:       #ffffff;
+  --bg2:      #fafafa;
+  --tint:     #f5f3ff;
+  --tint2:    #ede9fe;
+  --cyan-t:   #ecfeff;
+  --primary:  #5b21b6;
+  --primary2: #7c3aed;
+  --primary3: #a78bfa;
+  --deep:     #1e1b4b;
+  --accent:   #06b6d4;
+  --accent2:  #0891b2;
+  --text:     #0f0e17;
+  --text2:    #3d3a52;
+  --muted:    #6e6a8a;
+  --border:   #e8e4f0;
+  --border2:  #d1c9e8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;cursor:auto}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 72px;height:68px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-bottom:1px solid transparent;transition:all .3s}
+nav.scrolled{border-bottom-color:var(--border);box-shadow:0 1px 24px rgba(91,33,182,.06)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--deep);text-decoration:none;letter-spacing:.01em;display:flex;align-items:center;gap:10px}
+.nav-logo-icon{width:32px;height:32px;border-radius:8px;background:var(--primary);display:flex;align-items:center;justify-content:center}
+.nav-logo-icon svg{width:16px;height:16px;fill:white}
+.nav-links{display:flex;gap:0;list-style:none}
+.nav-links a{font-size:13px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:0 20px;height:68px;display:flex;align-items:center;position:relative;transition:color .3s}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:20px;right:20px;height:2px;background:var(--primary);transform:scaleX(0);transition:transform .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--primary)}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+.nav-cta{padding:9px 24px;border-radius:50px;background:var(--primary);color:white;font-size:13px;font-weight:500;letter-spacing:.05em;text-decoration:none;transition:all .25s;box-shadow:0 2px 12px rgba(91,33,182,.3)}
+.nav-cta:hover{background:var(--deep);box-shadow:0 4px 20px rgba(91,33,182,.45);transform:translateY(-1px)}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:108px 72px 72px;position:relative;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+/* Subtle grid */
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:64px 64px;opacity:.35}
+/* Floating orbs — intentional, not excessive */
+.orb{position:absolute;border-radius:50%;filter:blur(70px);animation:orbF 10s ease-in-out infinite}
+.o1{width:480px;height:480px;background:radial-gradient(circle,rgba(124,58,237,.14),transparent 70%);top:-80px;right:-40px;animation-delay:0s}
+.o2{width:300px;height:300px;background:radial-gradient(circle,rgba(6,182,212,.1),transparent 70%);bottom:80px;right:180px;animation-delay:3s}
+.o3{width:180px;height:180px;background:radial-gradient(circle,rgba(91,33,182,.1),transparent 70%);top:40%;left:35%;animation-delay:6s}
+@keyframes orbF{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(12px,-16px) scale(1.04)}66%{transform:translate(-8px,10px) scale(.97)}}
+/* Creative floating elements */
+.float-el{position:absolute;opacity:.6;animation:floatEl 6s ease-in-out infinite}
+.fe1{top:18%;right:8%;animation-delay:0s}
+.fe2{top:62%;right:5%;animation-delay:2s}
+.fe3{top:35%;right:22%;animation-delay:4s}
+@keyframes floatEl{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+.hero-l{position:relative;z-index:3}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--tint);border:1px solid var(--tint2);border-radius:50px;padding:5px 14px 5px 10px;margin-bottom:28px;opacity:0;animation:fadeU .7s .1s forwards}
+.eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse2 2s infinite}
+@keyframes pulse2{0%,100%{opacity:1}50%{opacity:.4}}
+.eyebrow-txt{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--primary)}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,6vw,92px);font-weight:300;line-height:.92;letter-spacing:-.02em;margin-bottom:16px;opacity:0;animation:fadeU .7s .25s forwards}
+h1 .name-last{display:block;font-style:italic;color:var(--primary)}
+.tagline-wrap{margin-bottom:8px;opacity:0;animation:fadeU .7s .35s forwards;overflow:hidden}
+.tagline{font-family:'Cormorant Garamond',serif;font-size:clamp(17px,2.2vw,24px);font-weight:300;font-style:italic;color:var(--text2);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.tagline-word{display:inline-block}
+.tagline-sep{color:var(--primary3);font-style:normal}
+.h-rule{width:0;height:1.5px;background:linear-gradient(90deg,var(--primary),var(--accent));margin:20px 0;opacity:0;animation:ruleIn .8s .45s forwards}
+@keyframes ruleIn{to{width:56px;opacity:1}}
+.h-sub{font-size:12px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:24px;opacity:0;animation:fadeU .7s .5s forwards}
+.h-bio{font-size:16px;line-height:1.82;color:var(--text2);max-width:460px;margin-bottom:40px;opacity:0;animation:fadeU .7s .6s forwards}
+.h-btns{display:flex;gap:12px;opacity:0;animation:fadeU .7s .72s forwards;flex-wrap:wrap}
+.btn-primary{padding:13px 32px;border-radius:50px;background:var(--primary);color:white;font-size:14px;font-weight:500;letter-spacing:.04em;text-decoration:none;transition:all .25s;box-shadow:0 3px 16px rgba(91,33,182,.32)}
+.btn-primary:hover{background:var(--deep);transform:translateY(-2px);box-shadow:0 8px 28px rgba(91,33,182,.44)}
+.btn-ghost{padding:13px 32px;border-radius:50px;border:1.5px solid var(--border2);color:var(--text2);font-size:14px;font-weight:400;letter-spacing:.04em;text-decoration:none;transition:all .25s}
+.btn-ghost:hover{border-color:var(--primary);color:var(--primary);background:var(--tint)}
+.h-social{display:flex;gap:10px;margin-top:20px;opacity:0;animation:fadeU .7s .84s forwards}
+.h-social a{width:36px;height:36px;border-radius:50%;border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;transition:all .25s}
+.h-social a:hover{border-color:var(--primary);color:var(--primary);background:var(--tint)}
+
+/* Hero right — image */
+.hero-r{position:absolute;top:0;right:72px;bottom:0;z-index:-1;display:flex;align-items:center;justify-content:center;width:min(42vw,420px);pointer-events:none;opacity:0;animation:fadeU .7s .3s forwards}
+.img-container{position:relative;width:min(100%,360px)}
+.img-main{width:100%;aspect-ratio:3/4;border-radius:4px;overflow:hidden;background:linear-gradient(145deg,var(--tint),var(--tint2));display:flex;align-items:center;justify-content:center;border:1px solid var(--border2);position:relative}
+.img-main::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(91,33,182,.08),rgba(6,182,212,.05))}
+.img-main img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;position:relative;z-index:1}
+.img-ph{font-family:'Cormorant Garamond',serif;font-size:88px;font-weight:300;color:var(--primary);font-style:italic;opacity:.25;position:relative;z-index:1}
+.img-frame{position:absolute;bottom:-12px;right:-12px;width:100%;height:100%;border:1.5px solid var(--primary3);border-radius:4px;z-index:-1;opacity:.2}
+.img-frame2{position:absolute;top:-12px;left:-12px;width:60px;height:60px;background:var(--accent);border-radius:4px;z-index:-1;opacity:.15}
+/* floating badge */
+.hero-badge{position:absolute;bottom:32px;left:-24px;z-index:3;background:white;border:1px solid var(--border);border-radius:14px;padding:14px 18px;box-shadow:0 8px 32px rgba(91,33,182,.12);animation:badgeFloat 4s ease-in-out infinite}
+@keyframes badgeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.badge-n{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;color:var(--primary);line-height:1}
+.badge-l{font-size:10px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:2px}
+.hero-badge2{position:absolute;top:24px;right:-20px;z-index:3;background:var(--deep);border-radius:12px;padding:10px 16px;box-shadow:0 8px 24px rgba(30,27,75,.3);animation:badgeFloat 4s ease-in-out infinite 2s}
+.badge2-inner{display:flex;align-items:center;gap:8px}
+.badge2-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse2 1.5s infinite}
+.badge2-txt{font-size:11px;color:rgba(255,255,255,.85);letter-spacing:.06em}
+
+/* scroll hint */
+.scroll-hint{position:absolute;bottom:32px;left:72px;display:flex;align-items:center;gap:12px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;z-index:2;opacity:0;animation:fadeU .7s 1.1s forwards}
+.scroll-line{width:36px;height:1px;background:var(--border2);position:relative;overflow:hidden}
+.scroll-line::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--primary);animation:slide 2s ease-in-out infinite}
+@keyframes slide{0%{left:-100%}50%,100%{left:100%}}
+
+@keyframes fadeU{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+/* SHARED SECTION */
+.sec{padding:88px 72px}
+.sec-alt{background:var(--bg2)}
+.sec-tint{background:var(--tint)}
+.stag{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);margin-bottom:12px}
+.stag::before{content:'';width:18px;height:1.5px;background:var(--primary)}
+.sh{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,48px);font-weight:300;line-height:1.08;margin-bottom:12px}
+.sh em{font-style:italic;color:var(--primary)}
+.ssub{font-size:15px;color:var(--text2);line-height:1.75;max-width:500px}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .65s,transform .65s}
+.rv.on{opacity:1;transform:none}
+.rv2{opacity:0;transform:translateY(28px);transition:opacity .65s .15s,transform .65s .15s}
+.rv2.on{opacity:1;transform:none}
+.rv3{opacity:0;transform:translateY(28px);transition:opacity .65s .28s,transform .65s .28s}
+.rv3.on{opacity:1;transform:none}
+
+/* ABOUT SNAPSHOT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.abio{font-size:16px;line-height:1.85;color:var(--text2);margin:24px 0 32px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.chip{padding:6px 16px;border-radius:50px;border:1px solid var(--border2);font-size:12px;letter-spacing:.06em;color:var(--text2);transition:all .25s}
+.chip:hover{border-color:var(--primary);color:var(--primary);background:var(--tint)}
+.about-cards{display:flex;flex-direction:column;gap:14px}
+.acard{background:white;border:1px solid var(--border);border-radius:14px;padding:24px;position:relative;overflow:hidden;transition:all .25s}
+.acard::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--primary),var(--accent))}
+.acard:hover{box-shadow:0 8px 28px rgba(91,33,182,.1);transform:translateY(-2px)}
+.acard-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.acard-val{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--deep)}
+.acard-sub{font-size:12px;color:var(--primary);margin-top:2px}
+.acards-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+/* COMPANIES */
+.mq-sec{padding:48px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;background:white}
+.mq-label{text-align:center;margin-bottom:28px;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.mq-wrap{overflow:hidden;position:relative}
+.mq-wrap::before,.mq-wrap::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.mq-wrap::before{left:0;background:linear-gradient(to right,white,transparent)}
+.mq-wrap::after{right:0;background:linear-gradient(to left,white,transparent)}
+.mq-track{display:flex;animation:marquee 32s linear infinite;width:max-content}
+.mq-track:hover{animation-play-state:paused}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.co{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 56px;border-right:1px solid var(--border);min-width:200px;gap:8px;transition:background .25s;cursor:default}
+.co:hover{background:var(--tint)}
+.co-lw{height:40px;display:flex;align-items:center;justify-content:center}
+.co-img{max-height:32px;max-width:110px;object-fit:contain;filter:grayscale(1) opacity(.45);transition:filter .3s}
+.co:hover .co-img{filter:grayscale(0) opacity(1)}
+.co-txt{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--muted);letter-spacing:.02em;transition:color .25s}
+.co:hover .co-txt{color:var(--primary)}
+.co-nm{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .25s}
+.co:hover .co-nm{color:var(--primary2)}
+
+/* FEATURED CASE STUDY */
+.fcs{background:var(--deep);padding:80px 72px;position:relative;overflow:hidden}
+.fcs::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:22px 22px}
+.fcs-orb{position:absolute;border-radius:50%;filter:blur(60px)}
+.fcs-o1{width:360px;height:360px;background:rgba(124,58,237,.2);top:-80px;right:-60px}
+.fcs-o2{width:240px;height:240px;background:rgba(6,182,212,.12);bottom:-40px;left:40px}
+.fcs-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.fcs-tag{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.fcs-tag::before{content:'';width:16px;height:1px;background:var(--accent)}
+.fcs-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:300;color:white;line-height:1.1;margin-bottom:10px;font-style:italic}
+.fcs-context{font-size:15px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:32px}
+.fcs-link{display:inline-flex;align-items:center;gap:8px;padding:11px 28px;border-radius:50px;background:white;color:var(--deep);font-size:13px;font-weight:500;letter-spacing:.04em;text-decoration:none;transition:all .25s}
+.fcs-link:hover{background:var(--accent);color:white;transform:translateY(-2px);box-shadow:0 8px 24px rgba(6,182,212,.4)}
+.fcs-bullets{display:flex;flex-direction:column;gap:20px}
+.fcs-bullet{display:flex;gap:16px;align-items:flex-start}
+.fcs-b-icon{width:36px;height:36px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;margin-top:2px}
+.fcs-b-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+.fcs-b-text{font-size:14px;color:rgba(255,255,255,.8);line-height:1.6}
+
+/* STATS */
+.stats-wrap{padding:80px 72px;background:white}
+.stats-head{text-align:center;margin-bottom:52px}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.si{background:white;padding:40px 24px;text-align:center;transition:background .25s;position:relative}
+.si::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--primary),var(--accent));transform:scaleX(0);transition:transform .35s}
+.si:hover{background:var(--tint)}
+.si:hover::after{transform:scaleX(1)}
+.snum{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:300;color:var(--primary);line-height:1;margin-bottom:6px}
+.sval{font-size:13px;font-weight:500;color:var(--text);margin-bottom:4px}
+.slbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+/* SKILLS — high level only, how I think */
+.skills-sec{background:var(--bg2)}
+.skills-intro{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-bottom:52px}
+.skgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.skcard{background:white;padding:32px 26px;transition:all .25s;position:relative;overflow:hidden}
+.skcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--primary),var(--accent));transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.skcard:hover{background:var(--tint)}
+.skcard:hover::before{transform:scaleX(1)}
+.sk-icon{font-size:28px;margin-bottom:14px;display:block}
+.sk-name{font-size:17px;font-weight:500;color:var(--deep);margin-bottom:8px;font-family:'Cormorant Garamond',serif;font-style:italic}
+.sk-philosophy{font-size:14px;color:var(--muted);line-height:1.65;font-style:normal}
+
+/* TESTIMONIALS */
+.testi-sec{background:white;padding:88px 72px}
+.testi-wrap{max-width:720px;margin:0 auto;text-align:center}
+.qmark{font-family:'Cormorant Garamond',serif;font-size:72px;line-height:.3;color:var(--primary);opacity:.2;display:block;margin-bottom:8px}
+.tq{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2.5vw,26px);font-style:italic;font-weight:300;line-height:1.6;color:var(--text);margin:28px 0}
+.tau{display:flex;align-items:center;justify-content:center;gap:14px}
+.tav{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:16px;color:white}
+.tname{font-size:14px;font-weight:500;color:var(--text);text-align:left}
+.trole{font-size:12px;color:var(--muted);text-align:left}
+.tdots{display:flex;gap:7px;justify-content:center;margin-top:28px}
+.tdot{width:5px;height:5px;border-radius:50%;background:var(--border2);cursor:pointer;transition:all .25s}
+.tdot.active{background:var(--primary);transform:scale(1.5)}
+
+/* LET'S BUILD — with contact form */
+.cta-sec{background:var(--bg2);padding:88px 72px}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.cta-left .sh{margin-bottom:16px}
+.cta-desc{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:36px}
+.contact-details{display:flex;flex-direction:column;gap:14px;margin-bottom:36px}
+.cd{display:flex;align-items:center;gap:14px;padding:16px 18px;background:white;border:1px solid var(--border);border-radius:12px;transition:all .25s}
+.cd:hover{border-color:var(--primary2);box-shadow:0 4px 16px rgba(91,33,182,.08)}
+.cd-icon{width:38px;height:38px;border-radius:9px;background:var(--tint);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+.cd-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.cd-val{font-size:14px;color:var(--text);font-weight:400}
+/* FORM */
+.form-card{background:white;border:1px solid var(--border);border-radius:20px;padding:36px;box-shadow:0 4px 32px rgba(91,33,182,.07)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.form-group{margin-bottom:14px}
+.form-label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.form-input,.form-select,.form-textarea{width:100%;padding:12px 16px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;transition:border-color .25s,box-shadow .25s;appearance:none}
+.form-input:focus,.form-textarea:focus{border-color:var(--primary2);box-shadow:0 0 0 3px rgba(124,58,237,.1)}
+.form-textarea{resize:vertical;min-height:120px}
+.form-submit{width:100%;padding:14px;border-radius:50px;background:var(--primary);color:white;font-size:14px;font-weight:500;letter-spacing:.05em;border:none;cursor:none;transition:all .25s;box-shadow:0 3px 16px rgba(91,33,182,.3)}
+.form-submit:hover{background:var(--deep);transform:translateY(-1px);box-shadow:0 8px 24px rgba(91,33,182,.42)}
+
+/* AI CHAT — intentional, delayed, integrated */
+.ai-fab{position:fixed;bottom:28px;right:28px;z-index:600;width:52px;height:52px;border-radius:16px;background:var(--primary);border:none;cursor:none;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(91,33,182,.4);transition:all .3s;opacity:0}
+.ai-fab.visible{opacity:1;animation:none}
+.ai-fab:hover{background:var(--deep);transform:translateY(-2px);box-shadow:0 8px 28px rgba(91,33,182,.55)}
+.ai-fab svg{width:22px;height:22px;fill:white}
+.ai-label{position:absolute;right:60px;top:50%;transform:translateY(-50%);background:var(--deep);color:white;font-size:11px;padding:6px 12px;border-radius:8px;white-space:nowrap;letter-spacing:.04em;opacity:0;pointer-events:none;transition:opacity .25s}
+.ai-label::after{content:'';position:absolute;left:100%;top:50%;transform:translateY(-50%);border:5px solid transparent;border-left-color:var(--deep)}
+.ai-fab:hover .ai-label{opacity:1}
+.cpanel{position:fixed;bottom:92px;right:28px;z-index:600;width:360px;max-height:480px;background:white;border:1px solid var(--border);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 16px 48px rgba(91,33,182,.15);transform:scale(.92) translateY(12px);opacity:0;pointer-events:none;transition:all .3s cubic-bezier(.34,1.56,.64,1);transform-origin:bottom right}
+.cpanel.open{transform:scale(1) translateY(0);opacity:1;pointer-events:all}
+.chat-head{padding:14px 16px;background:var(--tint);border-bottom:1px solid var(--tint2);display:flex;align-items:center;gap:10px}
+.chat-av{width:32px;height:32px;border-radius:8px;background:var(--primary);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.chat-name{font-size:13px;font-weight:500;color:var(--deep)}
+.chat-status{font-size:11px;color:var(--accent);display:flex;align-items:center;gap:4px}
+.chat-status::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent)}
+.chat-msgs{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:9px;scrollbar-width:thin;scrollbar-color:var(--border) transparent;max-height:300px}
+.cm{max-width:88%;padding:9px 13px;border-radius:13px;font-size:13px;line-height:1.55;animation:msgIn .25s ease}
+@keyframes msgIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.cm.bot{background:var(--tint);border:1px solid var(--tint2);color:var(--text);align-self:flex-start;border-bottom-left-radius:3px}
+.cm.user{background:var(--primary);color:white;align-self:flex-end;border-bottom-right-radius:3px}
+.ctyp{display:flex;gap:3px;padding:10px 13px;align-self:flex-start}
+.ctyp span{width:5px;height:5px;border-radius:50%;background:var(--primary3);animation:td 1.2s infinite}
+.ctyp span:nth-child(2){animation-delay:.2s}
+.ctyp span:nth-child(3){animation-delay:.4s}
+@keyframes td{0%,60%,100%{transform:translateY(0);opacity:.35}30%{transform:translateY(-5px);opacity:1}}
+.csugg-wrap{padding:0 12px 9px;display:flex;gap:6px;flex-wrap:wrap}
+.csug{padding:5px 11px;border-radius:50px;border:1px solid var(--tint2);background:transparent;font-size:11px;color:var(--primary);cursor:none;transition:all .2s;font-family:'DM Sans',sans-serif}
+.csug:hover{background:var(--tint);border-color:var(--primary)}
+.cinw{padding:10px 12px;border-top:1px solid var(--border);display:flex;gap:8px;align-items:center}
+.cin{flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:50px;padding:8px 14px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;transition:border-color .25s}
+.cin:focus{border-color:var(--primary2)}
+.csnd{width:30px;height:30px;border-radius:50%;background:var(--primary);border:none;cursor:none;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .2s}
+.csnd:hover{transform:scale(1.1)}
+.csnd svg{width:12px;height:12px;fill:white}
+
+/* FOOTER */
+footer{padding:32px 72px;background:var(--deep);display:flex;justify-content:space-between;align-items:center}
+.fl{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:white}
+.fc{font-size:12px;color:rgba(255,255,255,.4)}
+.flinks{display:flex;gap:24px}
+.flinks a{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none;transition:color .25s}
+.flinks a:hover{color:white}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:0 24px}.nav-links,.nav-cta{display:none}
+  .hero{grid-template-columns:1fr;padding:108px 24px 64px;gap:40px}.hero-r{display:none}
+  .sec,.stats-wrap,.testi-sec,.cta-sec,.fcs{padding:64px 24px}
+  .about-grid,.fcs-inner,.cta-grid,.skills-intro{grid-template-columns:1fr;gap:36px}
+  .sgrid{grid-template-columns:1fr 1fr}.skgrid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:12px;text-align:center;padding:24px}
+  .cpanel{width:calc(100vw - 48px);right:24px}
+}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 16 16"><text x="2" y="13" font-size="11" font-family="serif" font-style="italic">N</text></svg>
+    </div>
+    Naisargi Doshi
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About Me</a></li>
+    <li><a href="work.html">My Work</a></li>
+    <li><a href="casestudies.html">Case Study</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Let's Talk</a>
+</nav>
+
+<!-- ① HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+    <!-- Creative floating SVG elements -->
+    <svg class="float-el fe1" width="48" height="48" viewBox="0 0 48 48" fill="none">
+      <rect x="1" y="1" width="46" height="46" rx="12" stroke="#7c3aed" stroke-width="1" stroke-dasharray="4 3" fill="none" opacity=".4"/>
+      <rect x="12" y="12" width="24" height="24" rx="6" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1" opacity=".5"/>
+    </svg>
+    <svg class="float-el fe2" width="36" height="36" viewBox="0 0 36 36" fill="none">
+      <circle cx="18" cy="18" r="17" stroke="#06b6d4" stroke-width="1" stroke-dasharray="3 3" fill="none" opacity=".4"/>
+      <circle cx="18" cy="18" r="6" fill="#ecfeff" stroke="#06b6d4" stroke-width="1" opacity=".6"/>
+    </svg>
+    <svg class="float-el fe3" width="28" height="28" viewBox="0 0 28 28" fill="none">
+      <polygon points="14,2 26,26 2,26" stroke="#a78bfa" stroke-width="1" fill="none" opacity=".35"/>
+    </svg>
+  </div>
+
+  <div class="hero-l">
+    <div class="eyebrow">
+      <div class="eyebrow-dot"></div>
+      <span class="eyebrow-txt">Growth & Product Marketing</span>
+    </div>
+    <h1>Naisargi<span class="name-last">Doshi</span></h1>
+    <div class="tagline-wrap">
+      <div class="tagline">
+        <span class="tagline-word">Strategist</span>
+        <span class="tagline-sep">·</span>
+        <span class="tagline-word">Storyteller</span>
+        <span class="tagline-sep">·</span>
+        <span class="tagline-word">Growth Driver</span>
+      </div>
+    </div>
+    <div class="h-rule"></div>
+    <p class="h-sub">AI&#8209;Driven &nbsp;·&nbsp; Data&#8209;Backed &nbsp;·&nbsp; San Francisco, CA</p>
+    <p class="h-bio">I work in growth and product marketing, helping turn ideas into campaigns and strategies that actually perform.<br><br>Over the past 7+ years across B2B and B2C brands, I've used a mix of data, creativity, and AI to improve how marketing works.</p>
+    <div class="h-btns">
+      <a href="work.html" class="btn-primary">View My Work</a>
+      <a href="about.html" class="btn-ghost">My Story</a>
+    </div>
+    <div class="h-social">
+      <a href="https://www.linkedin.com/in/naisargidoshi" target="_blank" title="LinkedIn">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-r">
+    <div class="img-container">
+      <div class="img-main"><img src="My photo.jpeg" alt=""></div>
+      <div class="img-frame"></div>
+      <div class="img-frame2"></div>
+      <div class="hero-badge">
+        <div class="badge-n">7+</div>
+        <div class="badge-l">Years Experience</div>
+      </div>
+      <div class="hero-badge2">
+        <div class="badge2-inner">
+          <div class="badge2-dot"></div>
+          <div class="badge2-txt">Open to opportunities</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint"><div class="scroll-line"></div><span>Scroll</span></div>
+</section>
+
+<!-- ② ABOUT ME SNAPSHOT -->
+<section class="sec" id="about">
+  <div class="about-grid">
+    <div>
+      <div class="stag rv">About Me</div>
+      <h2 class="sh rv">The Mind Behind<br>the <em>Strategy</em></h2>
+      <p class="abio rv">I believe good marketing starts with understanding people. Over the years, I've worked across pharma, automotive, entertainment, and digital, building campaigns that not only look good but also deliver results.<br><br>I bring curiosity, a strong analytical approach, and an interest in storytelling into the work I do.</p>
+      <div class="chips rv">
+        <span class="chip">GTM Strategy</span><span class="chip">Growth Marketing</span><span class="chip">AI Tools</span>
+        <span class="chip">Analytics</span><span class="chip">B2B & B2C</span><span class="chip">Product Marketing</span>
+      </div>
+      <a href="about.html" class="btn-primary rv">Read My Full Story</a>
+    </div>
+    <div class="about-cards rv2">
+      <div class="acard">
+        <div class="acard-label">Currently</div>
+        <div class="acard-val">MS Student</div>
+        <div class="acard-sub">Cal State East Bay · GPA 4.0</div>
+      </div>
+      <div class="acards-row">
+        <div class="acard"><div class="acard-label">Experience</div><div class="acard-val">7+ Years</div></div>
+        <div class="acard"><div class="acard-label">Companies</div><div class="acard-val">5 Brands</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ③ COMPANIES MARQUEE -->
+<div class="mq-sec">
+  <div class="mq-label">Companies I've Worked With</div>
+  <div class="mq-wrap">
+    <div class="mq-track">
+      <!-- SET 1 -->
+      <div class="co"><div class="co-lw"><img class="co-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Pfizer_logo.svg/320px-Pfizer_logo.svg.png" alt="Pfizer" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="co-txt" style="display:none">Pfizer</span></div><span class="co-nm">Pfizer</span></div>
+      <div class="co"><div class="co-lw"><img class="co-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Mercedes-Benz_logo_2.svg/240px-Mercedes-Benz_logo_2.svg.png" alt="Mercedes-Benz" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="co-txt" style="display:none">Mercedes</span></div><span class="co-nm">Mercedes-Benz</span></div>
+      <div class="co"><div class="co-lw"><img class="co-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Saregama_logo.svg/320px-Saregama_logo.svg.png" alt="Saregama" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="co-txt" style="display:none">Saregama</span></div><span class="co-nm">Saregama India</span></div>
+      <div class="co"><div class="co-lw"><div class="co-txt">Logicloop</div></div><span class="co-nm">Logicloop Digital</span></div>
+      <div class="co"><div class="co-lw"><div class="co-txt" style="font-size:15px">Six Sigma</div></div><span class="co-nm">Six Sigma Microelectronics</span></div>
+      <!-- SET 2 duplicate -->
+      <div class="co"><div class="co-lw"><img class="co-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Pfizer_logo.svg/320px-Pfizer_logo.svg.png" alt="Pfizer" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="co-txt" style="display:none">Pfizer</span></div><span class="co-nm">Pfizer</span></div>
+      <div class="co"><div class="co-lw"><img class="co-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Mercedes-Benz_logo_2.svg/240px-Mercedes-Benz_logo_2.svg.png" alt="Mercedes-Benz" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="co-txt" style="display:none">Mercedes</span></div><span class="co-nm">Mercedes-Benz</span></div>
+      <div class="co"><div class="co-lw"><img class="co-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Saregama_logo.svg/320px-Saregama_logo.svg.png" alt="Saregama" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/><span class="co-txt" style="display:none">Saregama</span></div><span class="co-nm">Saregama India</span></div>
+      <div class="co"><div class="co-lw"><div class="co-txt">Logicloop</div></div><span class="co-nm">Logicloop Digital</span></div>
+      <div class="co"><div class="co-lw"><div class="co-txt" style="font-size:15px">Six Sigma</div></div><span class="co-nm">Six Sigma Microelectronics</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ④ FEATURED CASE STUDY — NEW SECTION -->
+<div class="fcs">
+  <div class="fcs-orb fcs-o1"></div><div class="fcs-orb fcs-o2"></div>
+  <div class="fcs-inner">
+    <div class="rv">
+      <div class="fcs-tag">Featured Case Study</div>
+      <h2 class="fcs-title">Scaling Test Drive Conversions for Mercedes-Benz</h2>
+      <p class="fcs-context">Led digital marketing efforts focused on improving lead quality and driving test drive conversions across paid channels including Google and Meta.</p>
+      <a href="casestudies.html" class="fcs-link">View Full Case Study →</a>
+    </div>
+    <div class="fcs-bullets rv2">
+      <div class="fcs-bullet">
+        <div class="fcs-b-icon" style="background:rgba(239,68,68,.15)">🎯</div>
+        <div>
+          <div class="fcs-b-label" style="color:rgba(239,68,68,.7)">Problem</div>
+          <div class="fcs-b-text">Strong lead volume, but inconsistent conversion into test drives and limited visibility into lead quality across campaigns.</div>
+        </div>
+      </div>
+      <div class="fcs-bullet">
+        <div class="fcs-b-icon" style="background:rgba(6,182,212,.15)">⚡</div>
+        <div>
+          <div class="fcs-b-label" style="color:rgba(6,182,212,.8)">Action</div>
+          <div class="fcs-b-text">Optimized audience targeting, tested creative variations, and refined campaign structure based on conversion behavior and intent signals.</div>
+        </div>
+      </div>
+      <div class="fcs-bullet">
+        <div class="fcs-b-icon" style="background:rgba(16,185,129,.15)">📈</div>
+        <div>
+          <div class="fcs-b-label" style="color:rgba(16,185,129,.8)">Result</div>
+          <div class="fcs-b-text">Generated 1,200–1,500 qualified leads per month at a 65% qualification rate, resulting in 100–150 test drives.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ⑤ STATS — outcome-driven -->
+<div class="stats-wrap">
+  <div class="stats-head">
+    <div class="stag rv" style="justify-content:center">Impact by the Numbers</div>
+    <h2 class="sh rv" style="text-align:center">Results That <em>Speak</em></h2>
+  </div>
+  <div class="sgrid">
+    <div class="si rv">
+      <div class="snum" data-target="7" data-suf="+">0</div>
+      <div class="sval">Years in Marketing</div>
+      <div class="slbl">Across B2B & B2C industries</div>
+    </div>
+    <div class="si rv2">
+      <div class="snum">1.2K<span style="font-size:32px">–1.5K</span></div>
+      <div class="sval">Leads per Month</div>
+      <div class="slbl">With ~65% qualification rate</div>
+    </div>
+    <div class="si rv3">
+      <div class="snum" data-target="111" data-suf="%">0</div>
+      <div class="sval">Increase in Impressions</div>
+      <div class="slbl">Through campaign optimization</div>
+    </div>
+    <div class="si rv">
+      <div class="snum" data-target="10" data-suf="M">0</div>
+      <div class="sval">Monthly Reach</div>
+      <div class="slbl">Across digital campaigns</div>
+    </div>
+  </div>
+</div>
+
+<!-- ⑦ TESTIMONIALS -->
+<section class="testi-sec">
+  <div class="stag rv" style="justify-content:center;margin-bottom:8px">What Others Say</div>
+  <div class="testi-wrap rv">
+    <span class="qmark">"</span>
+    <p class="tq" id="tq">A rare talent who combines analytical rigour with creative vision. Naisargi doesn't just run campaigns — she builds marketing systems that keep delivering long after launch.</p>
+    <div class="tau">
+      <div class="tav" id="tav">P</div>
+      <div>
+        <div class="tname" id="tn">Pragya, Saregama Ltd</div>
+        <div class="trole" id="tr">Senior Leader, Marketing</div>
+      </div>
+    </div>
+    <div class="tdots">
+      <div class="tdot active" onclick="showT(0)"></div>
+      <div class="tdot" onclick="showT(1)"></div>
+      <div class="tdot" onclick="showT(2)"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑧ LET'S BUILD SOMETHING TOGETHER — with contact form -->
+<section class="cta-sec" id="contact">
+  <div class="cta-grid">
+    <div class="cta-left">
+      <div class="stag rv">Let's Connect</div>
+      <h2 class="sh rv">Let's Build Something<br><em>Together</em></h2>
+      <p class="cta-desc rv">Whether you have a project in mind, a role to fill, or just want to explore — I'd love to connect and see what we can build.</p>
+      <div class="contact-details rv2">
+        <div class="cd">
+          <div class="cd-icon">📍</div>
+          <div><div class="cd-label">Location</div><div class="cd-val">San Francisco, California</div></div>
+        </div>
+        <div class="cd">
+          <div class="cd-icon">💼</div>
+          <div><div class="cd-label">LinkedIn</div><div class="cd-val">linkedin.com/in/naisargidoshi</div></div>
+        </div>
+        <div class="cd">
+          <div class="cd-icon">✨</div>
+          <div><div class="cd-label">Open To</div><div class="cd-val">Full-time · Consulting · Collaborations</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="rv2">
+      <div style="display:flex;flex-direction:column;gap:16px;padding-top:8px">
+        <a href="mailto:doshinaisargi09@gmail.com?subject=Let's connect" class="btn-primary" style="display:flex;align-items:center;justify-content:center;gap:10px;padding:16px 32px;font-size:15px;text-align:center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email Me
+        </a>
+        <a href="https://www.linkedin.com/in/naisargidoshi" target="_blank" class="btn-ghost" style="display:flex;align-items:center;justify-content:center;gap:10px;padding:16px 32px;font-size:15px;text-align:center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          Connect on LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fl">Naisargi Doshi</div>
+  <div class="fc">© 2025 · All rights reserved</div>
+  <div class="flinks">
+    <a href="about.html">About</a>
+    <a href="work.html">Work</a>
+    <a href="casestudies.html">Case Studies</a>
+    <a href="https://www.linkedin.com/in/naisargidoshi" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+
+<!-- AI CHAT — appears after 3s delay -->
+<button class="ai-fab" id="aiFab" style="position:fixed">
+  <div class="ai-label">Ask me anything</div>
+  <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+</button>
+<div class="cpanel" id="cpanel">
+  <div class="chat-head">
+    <div class="chat-av">🤖</div>
+    <div>
+      <div class="chat-name">Naisargi's AI Assistant</div>
+      <div class="chat-status">Online — Ask me anything</div>
+    </div>
+    <button onclick="toggleChat()" style="background:none;border:none;color:var(--muted);cursor:none;font-size:16px;padding:0 4px;margin-left:auto">✕</button>
+  </div>
+  <div class="chat-msgs" id="cmsgs">
+    <div class="cm bot">Hi! I can answer questions based on Naisargi's portfolio. What would you like to know?</div>
+  </div>
+  <div class="csugg-wrap" id="csugg">
+    <button class="csug" onclick="ss(this)">What has she worked on?</button>
+    <button class="csug" onclick="ss(this)">What are her key skills?</button>
+    <button class="csug" onclick="ss(this)">Is she open to new roles?</button>
+    <button class="csug" onclick="ss(this)">How do I get in touch?</button>
+  </div>
+  <div class="cinw">
+    <input class="cin" id="cin" placeholder="Ask about Naisargi..." onkeydown="if(event.key==='Enter')send()"/>
+    <button class="csnd" onclick="send()"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg></button>
+  </div>
+</div>
+
+<script>
+// NAV
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40));
+
+// REVEAL
+let counted=false;
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{
+  if(e.isIntersecting){
+    e.target.classList.add('on');
+    if(!counted&&e.target.querySelector('[data-target]')){counted=true;doCounters();}
+  }
+}),{threshold:.1});
+document.querySelectorAll('.rv,.rv2,.rv3').forEach(el=>obs.observe(el));
+
+// COUNTERS
+function doCounters(){
+  document.querySelectorAll('[data-target]').forEach(el=>{
+    const t=+el.dataset.target,s=el.dataset.suf||'';
+    let c=0;const step=t/60;
+    const id=setInterval(()=>{c+=step;if(c>=t){c=t;clearInterval(id)}el.textContent=Math.floor(c)+s},16);
+  });
+}
+
+// TESTIMONIALS
+const ts=[
+  {q:"A rare talent who combines analytical rigour with creative vision. Naisargi doesn't just run campaigns — she builds marketing systems that keep delivering long after launch.",n:"Pragya",r:"Colleague, Saregama Ltd",av:"CL"},
+  {q:"Naisargi has an exceptional ability to translate complex data into clear, actionable strategy. Her AI-driven approach to marketing is genuinely ahead of the curve.",n:"Sushant",r:"Team Lead, Mercedes-Benz",av:"TL"},
+  {q:"Working with Naisargi was a masterclass in growth thinking — structure, creativity, and relentless focus on results, every single time.",n:"Nupur",r:"Collaborator, Saregama Ltd",av:"SC"}
+];
+ts[0].av="P";
+ts[1].av="S";
+ts[2].av="N";
+ts[0].n="Pragya, Saregama Ltd";ts[0].r="Senior Leader, Marketing";
+ts[1].n="Sushant, Mercedes-Benz";ts[1].r="B2C Marketing";
+ts[2].n="Nupur, Saregama Ltd";ts[2].r="Growth Strategy";
+let ti=0;
+function showT(i){
+  ti=i;const t=ts[i];
+  document.getElementById('tq').textContent=t.q;
+  document.getElementById('tn').textContent=t.n;
+  document.getElementById('tr').textContent=t.r;
+  document.getElementById('tav').textContent=t.av;
+  document.querySelectorAll('.tdot').forEach((d,j)=>d.classList.toggle('active',j===i));
+}
+setInterval(()=>showT((ti+1)%ts.length),6000);
+
+// AI CHAT — delayed 3s
+setTimeout(()=>{
+  const fab=document.getElementById('aiFab');
+  fab.classList.add('visible');
+  fab.style.transition='opacity .5s, transform .3s, background .25s, box-shadow .25s';
+},3000);
+let chatOpen=false;
+function toggleChat(){chatOpen=!chatOpen;document.getElementById('cpanel').classList.toggle('open',chatOpen)}
+document.getElementById('aiFab').addEventListener('click',toggleChat);
+function ss(btn){document.getElementById('csugg').style.display='none';addMsg(btn.textContent,'user');setTimeout(()=>getReply(btn.textContent),400)}
+function send(){const inp=document.getElementById('cin');const txt=inp.value.trim();if(!txt)return;inp.value='';document.getElementById('csugg').style.display='none';addMsg(txt,'user');setTimeout(()=>getReply(txt),400)}
+function addMsg(t,type){const m=document.getElementById('cmsgs');const d=document.createElement('div');d.className='cm '+type;d.textContent=t;m.appendChild(d);m.scrollTop=m.scrollHeight}
+function addTyp(){const m=document.getElementById('cmsgs');const d=document.createElement('div');d.className='ctyp';d.id='ctyp';d.innerHTML='<span></span><span></span><span></span>';m.appendChild(d);m.scrollTop=m.scrollHeight}
+const portfolioFallback="I'm not fully sure about that based on the information available here. You can reach out to Naisargi directly at doshinaisargi09@gmail.com.";
+function portfolioReply(msg){
+  const q=(msg||'').toLowerCase();
+  const has=(...terms)=>terms.some(term=>q.includes(term));
+  if(has('contact','email','linkedin','reach','connect','location','san francisco','bay area','open to','consulting','collaboration')) return "Email: doshinaisargi09@gmail.com. LinkedIn: https://www.linkedin.com/in/naisargidoshi. She is based in the San Francisco Bay Area and is open to full-time roles, consulting, collaborations, and thoughtful marketing conversations.";
+  if(has('case study','case-study','mercedes','test drive','hubspot','qualified leads','qualification','result','results')) return "The Mercedes-Benz case study focuses on scaling test drive conversions. Problem: strong lead volume but inconsistent conversion into test drives. Action: Naisargi built a Meta and Google Ads funnel, used HubSpot CRM data, created acquisition cohorts, and optimized targeting. Results: 1,200-1,500 qualified leads per month, about 65% qualification, and 100-150 test drives.";
+  if(has('tool','tools','platform','platforms','google analytics','google ads','tableau','sql','hubspot','mailchimp','figma','canva','meta','tiktok','youtube')) return "The tools and platforms listed on the site include Google Analytics, Google Ads, Tableau, SQL, Meta, LinkedIn, TikTok, YouTube, HubSpot, Mailchimp, Figma, and Canva.";
+  if(has('skill','skills','growth marketing','product marketing','branding','analytics','gtm','a/b','market research','marketing mix','content creation')) return "Her skills include growth marketing, product marketing, branding, marketing analytics, campaign analytics, GTM strategy, A/B testing, market research, marketing mix modelling, and content creation.";
+  if(has('experience','work','worked','roles','role','companies','career','resume','six sigma','logicloop','saregama','pfizer')) return "Naisargi's experience includes Six Sigma Microelectronics - Digital Marketing Lead (2025-Present), Logicloop Digital - Growth Marketing Manager (2023-2025), Mercedes-Benz Auto Hangar - Marketing Manager (2021-2023), Saregama India Ltd. - Marketing Specialist (2020-2021), and Pfizer - Marketing Coordinator (2019-2020).";
+  if(has('education','school','degree','ms','mba','cal state','dalmia')) return "Her education listed on the site includes an MS in Marketing Analytics from Cal State East Bay and an MBA in Marketing from N.L. Dalmia Institute.";
+  if(has('who','naisargi','background','what does she do','about naisargi')) return "Naisargi Doshi is a growth and product marketing professional with 7+ years of experience across pharma, automotive, entertainment, semiconductor, and digital. She has worked across companies and agencies, combining data, creativity, and strategy.";
+  if(has('about me','story','consumer','choices','brand competition','interest','marketing decisions','intuition','experimentation')) return "Naisargi's interest in marketing started from observing consumer choices and how similar brands compete. She is interested in how marketing decisions are shaped by data, intuition, and experimentation.";
+  return portfolioFallback;
+}
+async function getReply(msg){
+  addTyp();
+  setTimeout(()=>{document.getElementById('ctyp')?.remove();addMsg(portfolioReply(msg),'bot');},400);
+}
+</script>
+</body>
+</html>
